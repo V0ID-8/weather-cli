@@ -20,6 +20,8 @@ API integration, local caching, and professional Git practices.
 ---
 
 ## Project Structure
+
+```
 weather-cli/
 │
 │   main.py              # Entry point — CLI argument routing
@@ -42,38 +44,40 @@ weather-cli/
 │
 └── cache/
         *.json           # Cached API responses per city (auto-created)
+```
 
+---
 
 ## Installation
 
 ### 1. Clone the repository
 
-bash
+```bash
 git clone https://github.com/V0ID-8/weather-cli.git
 cd weather-cli
-
+```
 
 ### 2. Install dependencies
 
-bash
+```bash
 pip install -r requirements.txt
-
+```
 
 ### 3. Set up your API key
 
 Create a `.env` file in the root folder:
 
-
+```
 OPENWEATHER_API_KEY=your_api_key_here
-
+```
 
 Get a free API key at: https://openweathermap.org/api
 
-
+---
 
 ## Usage
 
-bash
+```bash
 # Current weather for a city
 python main.py London
 
@@ -94,13 +98,13 @@ python main.py remove Dubai
 
 # Show help
 python main.py --help
+```
 
-
-
+---
 
 ## Example Output
 
-
+```
   London, GB
   ------------------------------------
   Condition   : Partly Cloudy
@@ -109,8 +113,9 @@ python main.py --help
   Humidity    : 72%
   Wind        : 14.4 km/h (SW)
   ------------------------------------
+```
 
-
+```
   5-Day Forecast — London
 
   ╭────────────┬──────┬─────┬────────────────╮
@@ -122,6 +127,9 @@ python main.py --help
   │ 2024-06-14 │ 22C  │ 16C │ Clear Sky      │
   │ 2024-06-15 │ 20C  │ 14C │ Light Rain     │
   ╰────────────┴──────┴─────┴────────────────╯
+```
+
+---
 
 ## Dependencies
 
@@ -132,7 +140,7 @@ python main.py --help
 | colorama | 0.4.6 | Terminal color output on Windows |
 | tabulate | 0.9.0 | Forecast table formatting |
 
-
+---
 
 ## Author
 
