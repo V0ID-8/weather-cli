@@ -1,4 +1,3 @@
-```markdown
 # Weather CLI
 
 A command-line application that fetches live weather data from OpenWeatherMap
@@ -147,4 +146,3 @@ python main.py --help
 
 **Talal Al-Bulushi**
 GitHub: https://github.com/V0ID-8
-```
