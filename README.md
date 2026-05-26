@@ -8,6 +8,12 @@ API integration, local caching, and professional Git practices.
 
 ---
 
+![Weather App Screenshot](assets/screenshot.png)
+
+---
+
+---
+
 ## Features
 
 - Modern desktop GUI with glassmorphism design
