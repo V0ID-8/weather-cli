@@ -10,11 +10,13 @@ API integration, local caching, and professional Git practices.
 
 ## Features
 
+- Modern desktop GUI with glassmorphism design
+- Command-line interface for terminal users
 - Live current weather for any city in the world
-- 5-day forecast displayed as a clean terminal table
-- Save and manage favorite cities locally
+- 5-day forecast with high/low temperatures
+- Save and manage favorite cities with one click
 - Offline mode — falls back to cached data when API is unreachable
-- Color-coded terminal output using Colorama
+- Fully responsive layout that resizes with the window
 - Clean error messages for invalid cities, bad keys, and no connection
 
 ---
@@ -24,28 +26,32 @@ API integration, local caching, and professional Git practices.
 ```
 weather-cli/
 │
-│   main.py              # Entry point — CLI argument routing
+│   main.py              # CLI entry point
+│   main_gui.py          # GUI entry point
 │   requirements.txt     # Project dependencies
 │   .env                 # API key (not committed)
 │   .gitignore
 │   README.md
 │
-├── weather/
-│       __init__.py      # Marks folder as a Python package
+├── weather/             # Core weather logic (shared by CLI and GUI)
+│       __init__.py
 │       api.py           # OpenWeatherMap API calls
 │       forecast.py      # Coordinates fetching and cache fallback
 │       utils.py         # Parses raw API responses into clean dicts
-│       display.py       # All terminal output and formatting
+│       display.py       # Terminal output and formatting
 │       favorites.py     # Save/load favorite cities to JSON
 │       cache.py         # Local cache for offline fallback
 │
-├── data/
-│       favorites.json   # Saved favorite cities (auto-created)
+├── gui/                 # Desktop GUI (CustomTkinter)
+│       __init__.py
+│       app.py           # Main window and layout
+│       widgets.py       # All reusable UI components
+│       theme.py         # Colors, fonts, sizing
 │
-└── cache/
-        *.json           # Cached API responses per city (auto-created)
+├── assets/              # Images and visual resources
+├── data/                # favorites.json (auto-created)
+└── cache/               # Cached API responses (auto-created)
 ```
-
 ---
 
 ## Installation
@@ -77,6 +83,24 @@ Get a free API key at: https://openweathermap.org/api
 
 ## Usage
 
+### GUI Version (recommended)
+
+Launch the desktop app with a modern glassmorphism interface:
+
+```bash
+python main_gui.py
+```
+
+Features:
+- Search any city from the top bar
+- Save favorites with one click — accessible from the sidebar
+- Auto-loads cached data when offline
+- Fully resizable window with responsive layout
+
+### CLI Version
+
+For terminal users:
+
 ```bash
 # Current weather for a city
 python main.py London
@@ -86,9 +110,6 @@ python main.py London --forecast
 
 # Save a city to favorites
 python main.py save Dubai
-
-# Save a multi-word city
-python main.py save "New York"
 
 # List all saved favorites
 python main.py favorites
@@ -139,7 +160,8 @@ python main.py --help
 | python-dotenv | 1.0.0 | Load API key from .env file |
 | colorama | 0.4.6 | Terminal color output on Windows |
 | tabulate | 0.9.0 | Forecast table formatting |
-
+| customtkinter | 5.2.2 | Modern desktop GUI framework |
+| Pillow | 10.3.0 | Image handling for GUI assets |
 ---
 
 ## Author
