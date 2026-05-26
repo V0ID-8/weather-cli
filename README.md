@@ -168,4 +168,3 @@ python main.py --help
 
 **Talal Al-Bulushi**
 GitHub: https://github.com/V0ID-8
-```
