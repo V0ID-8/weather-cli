@@ -9,20 +9,20 @@ BG_GRADIENT_TOP   = "#0f0f1a"   # Top of window
 BG_GRADIENT_BOT   = "#1a1a2e"   # Bottom of window
 
 # glass cards
-CARD_BG           = "#ffffff18" # White at 9% opacity — frosted glass base
-CARD_BORDER       = "#ffffff30" # White at 19% opacity — card border
-CARD_HOVER        = "#ffffff22" # Slightly brighter on hover
+CARD_BG           = "#25252f"   # Frosted glass base
+CARD_BORDER       = "#3d3d46"   # Card border
+CARD_HOVER        = "#2e2e38"   # Slightly brighter on hover
 CARD_RADIUS       = 20          # Corner radius for all cards
 
 # accent colors
 ACCENT_BLUE       = "#4fc3f7"   # Primary accent — light sky blue
 ACCENT_PURPLE     = "#9b59b6"   # Secondary accent — soft purple
-ACCENT_GLOW       = "#4fc3f780" # Blue at 50% opacity — glow effect
+ACCENT_GLOW       = "#2f6989"   # Blue glow effect
 
 # text colors
 TEXT_PRIMARY      = "#ffffff"   # Main text — pure white
-TEXT_SECONDARY    = "#ffffffaa" # Subtext — white at 67% opacity
-TEXT_MUTED        = "#ffffff66" # Muted labels — white at 40% opacity
+TEXT_SECONDARY    = "#b0b0b3"   # Subtext
+TEXT_MUTED        = "#6f6f76"   # Muted labels
 TEXT_ACCENT       = "#4fc3f7"   # Highlighted values
 
 # fonts
