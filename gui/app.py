@@ -62,7 +62,7 @@ class WeatherApp(ctk.CTk):
         self.sidebar = ctk.CTkFrame(
             self,
             width=SIDEBAR_WIDTH,
-            fg_color="#12122088",
+            fg_color="#11111d",
             corner_radius=0,
         )
         self.sidebar.grid(row=0, column=0, sticky="nsew")
@@ -113,11 +113,13 @@ class WeatherApp(ctk.CTk):
         self.main_frame = ctk.CTkFrame(self, fg_color="transparent")
         self.main_frame.grid(row=0, column=1, sticky="nsew", padx=PADDING_LG, pady=PADDING_LG)
         self.main_frame.grid_columnconfigure(0, weight=1)
-        self.main_frame.grid_rowconfigure(1, weight=1)
+        self.main_frame.grid_rowconfigure(2, weight=1)
 
         # Search bar at top
         self.search_bar = SearchBar(self.main_frame, on_search=self._search_city)
         self.search_bar.grid(row=0, column=0, sticky="ew", pady=(0, PADDING_MD))
+
+        # row=1 reserved for the status banner
 
         # Scrollable content area below search
         self.content = ctk.CTkScrollableFrame(
@@ -125,7 +127,7 @@ class WeatherApp(ctk.CTk):
             fg_color="transparent",
             scrollbar_button_color=CARD_BORDER,
         )
-        self.content.grid(row=1, column=0, sticky="nsew")
+        self.content.grid(row=2, column=0, sticky="nsew")
         self.content.grid_columnconfigure(0, weight=1)
 
 
@@ -279,4 +281,4 @@ class WeatherApp(ctk.CTk):
             message=message,
             warning=warning,
         )
-        self.status_banner.grid(row=0, column=0, sticky="ew", pady=(0, PADDING_SM))            
+        self.status_banner.grid(row=1, column=0, sticky="ew", pady=(0, PADDING_SM))            
